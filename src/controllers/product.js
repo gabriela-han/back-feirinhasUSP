@@ -24,7 +24,6 @@ const registerProduct = async(req, res, next) => {
             {
                 $project: {
                     produtos: 1,
-                    _id: 0
                 }
             }
         ]).allowDiskUse(true);
@@ -129,7 +128,7 @@ const getProduct = async(req, res, next)=> {
             },
             {
                 $project:{
-                    _id: 0,
+                    _id: 1,
                     nomeProduto: 1,
                     descricao: 1,
                     quantidade: 1,
